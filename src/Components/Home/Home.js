@@ -26,13 +26,14 @@ const Home = () => {
                     }}
                     initial={{ opacity: 0, scale: 0.5 }}
 
+
                 >
-                    <h2 className='text-white fw-bold'>
+                    <motion.h2 className='text-white py-4 fw-bold' whileHover={{ scale: 1.3 }}>
                         <span style={{ "color": "rgb(194, 9, 194)" }}>L</span>earn<span style={{ "color": "gold" }}>AP</span>
 
-                    </h2>
-                    <p className='text-warning '>Take your learning organization <br /> to the next level. to the next level. Who'll share <br /> their knowledge to people around the world.</p>
-                    <button className='btn  btn-purple  text-white fw-bolder mb-3'>Join For Free</button>
+                    </motion.h2>
+                    <motion.p className='text-warning py-2 my-3 bg-opacity p-4 rounded ' whileHover={{ scale: 1.3 }}>Take your learning organization <br /> to the next level. to the next level. Who'll share <br /> their knowledge to people around the world.</motion.p>
+                    <button className='btn  btn-purple mt-3  text-white  mb-3'>Join For Free</button>
                 </motion.div>
 
             </div>

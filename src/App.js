@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Layout/Main';
 import Home from './Components/Home/Home';
+import Blog from './Components/Blog/Blog';
+import FAQ from './Components/FAQ/FAQ';
 
 function App() {
   const router = createBrowserRouter([
@@ -14,7 +16,15 @@ function App() {
         {
           path: '/',
           element: <Home></Home>
-        }
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
+        },
+        {
+          path: '/faq',
+          element: <FAQ></FAQ>
+        },
 
       ]
     }
@@ -22,7 +32,7 @@ function App() {
 
   ])
   return (
-    <div className="">
+    <div className="App">
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
