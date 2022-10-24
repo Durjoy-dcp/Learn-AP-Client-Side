@@ -1,0 +1,74 @@
+@keyframes bg-animi {
+    0% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.684), rgba(0, 0, 0, 0.665)), url("./../../../public/assets/header3.png");
+
+    }
+
+
+    50% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.665)), url("./../../../public/assets/header2.png");
+
+    }
+
+
+
+
+    100% {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.641), rgba(0, 0, 0, 0.66)), url("./../../../public/assets/header3.png");
+
+    }
+}
+
+
+@keyframes body-animi {
+
+    0% {
+        background-color: #de105c89;
+
+
+    }
+
+    25% {
+        background-color: #c8dc5490;
+
+
+    }
+
+    50% {
+        background-color: #222b20c4;
+
+    }
+
+
+
+
+    80% {
+        background-color: #2776b67c;
+
+
+    }
+
+    100% {
+        background-color: #37c03276;
+
+
+    }
+}
+
+.navbar {
+
+    background-color: #2b2024c4;
+}
+
+.header {
+
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.575));
+    animation: bg-animi 10s linear infinite alternate;
+    min-height: 520px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
