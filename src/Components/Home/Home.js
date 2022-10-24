@@ -32,7 +32,7 @@ const Home = () => {
 
                     </h2>
                     <p className='text-warning '>Take your learning organization <br /> to the next level. to the next level. Who'll share <br /> their knowledge to people around the world.</p>
-                    <button className='btn  btn-primary mb-3'>Join For Free</button>
+                    <button className='btn  btn-purple  text-white fw-bolder mb-3'>Join For Free</button>
                 </motion.div>
 
             </div>
