@@ -14,9 +14,19 @@
     background-color: rgb(36, 41, 51);
 }
 
+.mobilesidebutton {
+    z-index: 1;
+
+}
+
 .sidebar-catagory {
     z-index: -1;
 
 
 
+}
+
+.card-container-bg {
+    background-image: linear-gradient(172deg, rgba(125, 185, 217, 0.145), rgba(216, 115, 220, 0.07), #c4d7e653 33%);
+    box-shadow: 5px 1px 20px -4px rgb(0, 79, 128) inset;
 }
