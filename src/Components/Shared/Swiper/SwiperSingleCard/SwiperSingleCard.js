@@ -4,7 +4,7 @@ import './SwiperSingleCard.css'
 const SwiperSingleCard = ({ feedback }) => {
     const { name, post, heading, img } = feedback;
     return (
-        <div className='p-3 bg-opacity my-5 rounded ' >
+        <div className='p-3 bg-opacity mt-3 mb-4 rounded ' >
             <div className='d-flex align-items-center'>
 
                 <div>

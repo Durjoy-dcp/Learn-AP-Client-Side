@@ -47,7 +47,7 @@ const Home = () => {
             </div>
 
             <div>
-                <div className='text-center my-5'>
+                <div className='text-center my-5 px-4 py-2'>
 
                     <h1>What Students <br />
                         Think and Say About  <span className='fw-bold' style={{ "color": "rgb(194, 9, 194)" }}>L</span>earn<span style={{ "color": "gold" }}>AP</span>

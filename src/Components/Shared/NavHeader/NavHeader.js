@@ -14,7 +14,7 @@ const NavHeader = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
                         <ToggleSwitch className="" label="theme" ></ToggleSwitch>
-                        <NavLink className="nav-link" to="/courses">Courses</NavLink>
+                        <NavLink className="nav-link" to="/allcourses">Courses</NavLink>
                         <NavLink className="nav-link" to="/faq">FAQ</NavLink>
                         <NavLink className="nav-link" to="/blog">Blog</NavLink>
 
