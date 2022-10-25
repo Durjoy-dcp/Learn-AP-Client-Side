@@ -1,0 +1,14 @@
+.sidebar {
+    background-color: purple;
+    height: 100vh;
+
+}
+
+.coursesContainer {
+    z-index: -1;
+}
+
+.mobileSideBar {
+    z-index: 1;
+    background-color: purple;
+}
