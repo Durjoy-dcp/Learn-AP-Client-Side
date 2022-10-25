@@ -49,9 +49,9 @@ const AllCourse = () => {
                 </Col>
                 <Col md={3} className="order-sm-1 order-md-2  " >
 
-                    <div className='sidebar w-100 d-none d-md-block position-fixed'>
+                    <div className='sidebar w-100 d-none d-md-block sidebar-catagory  position-fixed top-0 '>
 
-                        <AllCatagory ></AllCatagory>
+                        <AllCatagory></AllCatagory>
                     </div>
                 </Col>
 

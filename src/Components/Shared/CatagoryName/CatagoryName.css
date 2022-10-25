@@ -1,0 +1,14 @@
+.catagory-link {
+
+    color: rgb(166, 173, 186);
+
+}
+
+.catagory-link:hover {
+    background-color: rgba(58, 63, 73, 0.766);
+}
+
+.gray-text {
+    color: rgb(166, 173, 186);
+
+}

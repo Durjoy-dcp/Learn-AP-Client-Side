@@ -13,8 +13,8 @@ const AllCatagory = () => {
     }, []);
 
     return (
-        <div className='m-2 p-4 rounded'>
-            <h4 >Select Catagory</h4>
+        <div className=' p-1 rounded '>
+            <h4 className='px-5 py-3 gray-text m-1 mt-5' > Catagory</h4>
             <hr />
             <ul>
 
