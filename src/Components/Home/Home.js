@@ -1,6 +1,14 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
 import './Home.css';
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import { EffectCoverflow, Pagination, EffectCards } from "swiper";
+import SwiperTab from '../Shared/Swiper/SwiperTab';
+import { Container } from 'react-bootstrap';
+
 const Home = () => {
     return (
         <div>
@@ -37,6 +45,22 @@ const Home = () => {
                 </motion.div>
 
             </div>
+
+            <div>
+                <div className='text-center my-5'>
+
+                    <h1>What Students <br />
+                        Think and Say About  <span className='fw-bold' style={{ "color": "rgb(194, 9, 194)" }}>L</span>earn<span style={{ "color": "gold" }}>AP</span>
+                    </h1>
+                </div>
+                <Container>
+
+                    <SwiperTab></SwiperTab>
+                </Container>
+
+
+            </div>
+
         </div>
     );
 };
