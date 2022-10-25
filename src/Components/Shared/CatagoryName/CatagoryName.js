@@ -16,9 +16,9 @@ const CatagoryName = ({ catagory }) => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileHover={{ scale: 1.05 }}
             >
-                <Link to='/catagory' className='nav-link catagory-link p-1 rounded'> <small>{name}</small> </Link>
+                <Link to={`/catagorycourses/${id}`} className='nav-link catagory-link p-1 rounded'> <small>{name}</small> </Link>
             </motion.div>
-        </div>
+        </div >
     );
 };
 

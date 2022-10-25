@@ -7,6 +7,8 @@ import Home from './Components/Home/Home';
 import Blog from './Components/Blog/Blog';
 import FAQ from './Components/FAQ/FAQ';
 import AllCourse from './Components/AllCourse/AllCourse';
+import CourseDetails from './Components/CatagoryCourse/CatagoryCourse';
+import CatagoryCourse from './Components/CatagoryCourse/CatagoryCourse';
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +31,13 @@ function App() {
         {
           path: '/allcourses',
           element: <AllCourse></AllCourse>
+        },
+        {
+          path: '/catagorycourses/:id',
+          element: <CatagoryCourse ></CatagoryCourse>,
+          loader: async ({ params }) => {
+            return fetch(`http://localhost:5000/courses/${params.id}`);
+          }
         },
 
       ]

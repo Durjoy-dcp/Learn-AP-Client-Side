@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { motion } from "framer-motion";
 import { Col, Container, Row } from 'react-bootstrap';
-import AllCatagory from '../Shared/AllCatagory/AllCatagory';
-import './AllCourse.css';
-import { useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
+import AllCatagory from '../Shared/AllCatagory/AllCatagory';
+import { useLoaderData } from 'react-router-dom';
 import Course from '../Shared/Course/Course';
-const AllCourse = () => {
+const CatagoryCourse = () => {
     const [toogle, setToogle] = useState(false);
-    const [courses, setCourses] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/allcourses')
-            .then(res => res.json())
-            .then(data => setCourses(data))
-
-    }, [])
+    const courses = useLoaderData();
     console.log(courses);
+
     return (
         <div>
 
@@ -81,4 +75,4 @@ const AllCourse = () => {
     );
 };
 
-export default AllCourse;
+export default CatagoryCourse;
