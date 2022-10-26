@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { motion } from 'framer-motion';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <motion.div animate={{ y: [150, 0], opacity: 1 }}
@@ -32,6 +33,13 @@ const Login = () => {
                     </Form.Group>
                     <Button variant="outline-info" type="submit">
                         Login
+                    </Button>
+                    <p className='my-3 p-2'><small>New here? <Link className='text-decoration-none' to="/signup"> create an account</Link> </small></p>
+                    <Button variant="info" type="submit" className="w-100 ">
+                        Sign Up with Google
+                    </Button>
+                    <Button variant="warning" type="submit" className="w-100 my-2">
+                        Sign Up with Github
                     </Button>
                 </Form>
             </Container>

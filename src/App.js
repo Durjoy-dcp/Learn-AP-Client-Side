@@ -10,6 +10,7 @@ import AllCourse from './Components/AllCourse/AllCourse';
 import CatagoryCourse from './Components/CatagoryCourse/CatagoryCourse';
 import CourseDetails from './Components/CourseDetails/CourseDetails';
 import Login from './Components/Shared/Login/Login';
+import Registration from './Components/Registration/Registration';
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +25,10 @@ function App() {
         {
           path: '/login',
           element: <Login></Login>
+        },
+        {
+          path: '/signup',
+          element: <Registration></Registration>
         },
         {
           path: '/blog',
