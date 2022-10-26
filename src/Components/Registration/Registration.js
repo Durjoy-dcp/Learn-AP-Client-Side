@@ -24,7 +24,7 @@ const Registration = () => {
         const name = form.name.value;
 
         if (name.split(' ').length < 2) {
-            setErrorMsg('You should provide at least words: First Name & Last Name ')
+            setErrorMsg('You should provide at least two words: First Name & Last Name ')
             return;
         }
 

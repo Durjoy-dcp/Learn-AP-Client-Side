@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination, EffectCards } from "swiper";
 import SwiperTab from '../Shared/Swiper/SwiperTab';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -41,7 +42,8 @@ const Home = () => {
 
                     </motion.h2>
                     <motion.p className='text-warning py-2 my-3 bg-opacity p-4 rounded ' whileHover={{ scale: 1.3 }}>Take your learning organization <br /> to the next level. to the next level. Who'll share <br /> their knowledge to people around the world.</motion.p>
-                    <button className='btn  btn-purple mt-3  text-white  mb-3'>Join For Free</button>
+                    <Link to='/allcourses' > <button className='btn  btn-purple mt-3  text-white  mb-3'>Join For Free</button> </Link>
+
                 </motion.div>
 
             </div>
