@@ -7,6 +7,7 @@ import { FaStar, FaRegClock, FaMoneyBillAlt } from 'react-icons/fa';
 
 import { useLoaderData } from 'react-router-dom';
 import AllCatagory from '../Shared/AllCatagory/AllCatagory';
+import SwiperTab from '../Shared/Swiper/SwiperTab';
 const CourseDetails = () => {
     const [toogle, setToogle] = useState(false);
     const course = useLoaderData();
@@ -82,7 +83,10 @@ const CourseDetails = () => {
                 </Col>
 
             </Row>
+            <Container>
 
+                <SwiperTab></SwiperTab>
+            </Container>
         </div>
     );
 };

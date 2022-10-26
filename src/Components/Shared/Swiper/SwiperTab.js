@@ -14,7 +14,7 @@ import SwiperSingleCard from './SwiperSingleCard/SwiperSingleCard';
 const SwiperTab = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     useEffect(() => {
-        fetch("feedback.json")
+        fetch("/feedback.json")
             .then(res => res.json())
             .then(data => setFeedbacks(data))
     }, [])
