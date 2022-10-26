@@ -40,7 +40,7 @@ const Course = ({ course }) => {
                     </div>
                 </div>
                 <div className=' text-lg-start text-center'>
-                    <Link><button className=''>Go Details</button></Link>
+                    <Link to={`/course/${id}`}><button className=''>Go Details</button></Link>
 
                 </div>
             </div>
