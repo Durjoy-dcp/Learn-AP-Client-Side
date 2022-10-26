@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { motion } from "framer-motion";
 import { Col, Container, Row } from 'react-bootstrap';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
-import { FaStar, FaRegClock, FaMoneyBillAlt } from 'react-icons/fa';
+import { FaStar, FaRegClock, FaMoneyBillAlt, FaArrowCircleLeft } from 'react-icons/fa';
 
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import AllCatagory from '../Shared/AllCatagory/AllCatagory';
 import SwiperTab from '../Shared/Swiper/SwiperTab';
 const CourseDetails = () => {
@@ -65,6 +65,9 @@ const CourseDetails = () => {
                                         <p className='gray-text  ' ><FaMoneyBillAlt className='text-success me-2 ' />${course.price}</p>
 
                                     </div>
+                                    <div className='d-flex'>
+                                        <Link className='' to={`/catagorycourses/${course.catagory}`} ><button className='rounded btn btn-outline-info m-3'><FaArrowCircleLeft /></button></Link>
+                                    </div>
                                 </div>
 
 
@@ -83,6 +86,7 @@ const CourseDetails = () => {
                 </Col>
 
             </Row>
+
             <Container>
 
                 <SwiperTab></SwiperTab>
