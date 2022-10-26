@@ -20,7 +20,7 @@ const NavHeader = () => {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        <NavLink to='/login' className="nav-link">Login</NavLink>
                         <Nav.Link eventKey={2} href="#memes">
                             Dank memes
                         </Nav.Link>

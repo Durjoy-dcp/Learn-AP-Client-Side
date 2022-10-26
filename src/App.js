@@ -9,6 +9,7 @@ import FAQ from './Components/FAQ/FAQ';
 import AllCourse from './Components/AllCourse/AllCourse';
 import CatagoryCourse from './Components/CatagoryCourse/CatagoryCourse';
 import CourseDetails from './Components/CourseDetails/CourseDetails';
+import Login from './Components/Shared/Login/Login';
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +20,10 @@ function App() {
         {
           path: '/',
           element: <Home></Home>
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
         },
         {
           path: '/blog',
