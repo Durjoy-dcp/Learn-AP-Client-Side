@@ -4,7 +4,18 @@ import Button from 'react-bootstrap/Button';
 import { motion } from 'framer-motion';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../UserContext/UserContext';
 const Login = () => {
+    const authInfo = useContext(AuthContext);
+    const { SignInGoogle } = authInfo;
+
+    const handleTosignwithGoogle = () => {
+        SignInGoogle()
+            .then(result => console.log(result))
+            .catch(error => console.log(error))
+    }
+
     return (
         <motion.div animate={{ y: [150, 0], opacity: 1 }}
             transition={{
@@ -35,10 +46,10 @@ const Login = () => {
                         Login
                     </Button>
                     <p className='my-3 p-2'><small>New here? <Link className='text-decoration-none' to="/signup"> create an account</Link> </small></p>
-                    <Button variant="info" type="submit" className="w-100 ">
+                    <Button onClick={handleTosignwithGoogle} variant="info" className="w-100 ">
                         Sign Up with Google
                     </Button>
-                    <Button variant="warning" type="submit" className="w-100 my-2">
+                    <Button variant="warning" className="w-100 my-2">
                         Sign Up with Github
                     </Button>
                 </Form>
