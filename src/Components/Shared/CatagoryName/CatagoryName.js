@@ -9,12 +9,12 @@ const CatagoryName = ({ catagory }) => {
             <motion.div className='w-100 p-2 m-1 '
                 animate={{ x: [120, 0], opacity: 1, scale: 1 }}
                 transition={{
-                    duration: .8,
+                    duration: .4,
                     delay: 0.1,
 
                 }}
                 initial={{ opacity: 0, scale: 0.5 }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
             >
                 <Link to={`/catagorycourses/${id}`} className='nav-link catagory-link p-1 rounded'> <small>{name}</small> </Link>
             </motion.div>

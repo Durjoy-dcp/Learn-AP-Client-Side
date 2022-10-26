@@ -5,13 +5,24 @@ import Card from 'react-bootstrap/Card';
 import './Course.css';
 import { FaStar, FaRegClock, FaMoneyBillAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+
 const Course = ({ course }) => {
     const { catagory, duration, id
         , img, name, price, rating, title } = course
     return (
 
 
-        <div className='m-3 course-card rounded p-3  d-md-flex align-items-center'>
+        <motion.div className='m-3 course-card rounded p-3  d-md-flex align-items-center'
+            animate={{ x: [-120, 0], opacity: 1, scale: 1 }}
+            transition={{
+                duration: .4,
+                delay: 0.1,
+
+            }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+        >
 
             <div className='me-2'>
                 <img src={img} style={{ maxWidth: "300px" }} alt="" className='rounded fluid' />
@@ -33,7 +44,7 @@ const Course = ({ course }) => {
 
                 </div>
             </div>
-        </div>
+        </motion.div>
 
     );
 };
