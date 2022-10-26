@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { AuthContext } from '../../UserContext/UserContext';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FaGoogle, FaGithub } from 'react-icons/fa'
 
 const Registration = () => {
     const authInfo = useContext(AuthContext);
@@ -120,10 +121,10 @@ const Registration = () => {
                     </Button>
                     <p className='my-3 p-2'><small>Already have an account? <Link className='text-decoration-none' to="/login"> create an account</Link> </small></p>
                     <Button onClick={handleTosignwithGoogle} variant="info" className="w-100 ">
-                        Sign Up with Google
+                        Sign Up with Google<FaGoogle className='my-auto ms-1' />
                     </Button>
                     <Button variant="warning" onClick={handleTosignwithGithub} className="w-100 my-2">
-                        Sign Up with Github
+                        Sign Up with Github <FaGithub className='my-auto ms-1' />
                     </Button>
                 </Form>
             </Container>

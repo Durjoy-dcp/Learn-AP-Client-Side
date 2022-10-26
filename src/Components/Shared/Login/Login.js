@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../UserContext/UserContext';
 import { toast } from 'react-toastify';
+import { FaGoogle, FaGithub } from 'react-icons/fa'
 const Login = () => {
     const authInfo = useContext(AuthContext);
     const [errormsg, setErrorMsg] = useState('');
@@ -88,10 +89,10 @@ const Login = () => {
                     }
                     <p className='my-3 p-2'><small>New here? <Link className='text-decoration-none' to="/signup"> create an account</Link> </small></p>
                     <Button onClick={handleTosignwithGoogle} variant="info" className="w-100 ">
-                        Sign Up with Google
+                        Sign Up with Google <FaGoogle className='my-auto ms-1' />
                     </Button>
                     <Button variant="warning" onClick={handleTosignwithGithub} className="w-100 my-2">
-                        Sign Up with Github
+                        Sign Up with Github <FaGithub className='my-auto ms-1' />
                     </Button>
                 </Form>
             </Container>
