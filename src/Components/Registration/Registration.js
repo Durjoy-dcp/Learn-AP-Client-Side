@@ -3,6 +3,7 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { AuthContext } from '../../UserContext/UserContext';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Registration = () => {
     const authInfo = useContext(AuthContext);
@@ -32,9 +33,11 @@ const Registration = () => {
             .then(result => {
 
                 setErrorMsg("succssfully logged In");
+                toast("succssfully logged In");
+
                 handletoUpdate(name, url);
                 navigate(from, { replace: true });
-            }).catch(error => { setErrorMsg(error.message); })
+            }).catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
 
 
     }
@@ -45,27 +48,32 @@ const Registration = () => {
         }
         updateInfo(profile)
             .then(() => { })
-            .catch(error => console.log(error))
+            .catch(er => { })
     }
 
     const handleTosignwithGoogle = () => {
         SignInGoogle()
             .then(result => {
                 setErrorMsg("succssfully logged In");
+                toast("succssfully logged In");
+
                 navigate(from, { replace: true });
                 setLoading(false);
+
             }
             )
-            .catch(error => console.log(error))
+            .catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
     }
     const handleTosignwithGithub = () => {
         SignInGithub()
             .then(result => {
                 setErrorMsg("succssfully logged In");
+                toast("succssfully logged In");
+
                 navigate(from, { replace: true });
                 setLoading(false);
             })
-            .catch(error => console.log(error))
+            .catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
     }
 
     return (

@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../UserContext/UserContext';
+import { toast } from 'react-toastify';
 const Login = () => {
     const authInfo = useContext(AuthContext);
     const [errormsg, setErrorMsg] = useState('');
@@ -23,8 +24,9 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 setErrorMsg("succssfully logged In");
+                toast("succssfully logged In");
                 navigate(from, { replace: true });
-            }).catch(error => { setErrorMsg(error.message); })
+            }).catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
 
 
     }
@@ -33,20 +35,23 @@ const Login = () => {
         SignInGoogle()
             .then(result => {
                 setErrorMsg("succssfully logged In");
+                toast("succssfully logged In");
                 navigate(from, { replace: true });
                 setLoading(false);
             }
             )
-            .catch(error => console.log(error))
+            .catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
     }
     const handleTosignwithGithub = () => {
         SignInGithub()
             .then(result => {
                 setErrorMsg("succssfully logged In");
+                toast("succssfully logged In");
+
                 navigate(from, { replace: true });
                 setLoading(false);
             })
-            .catch(error => console.log(error))
+            .catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
     }
 
     return (
@@ -78,6 +83,9 @@ const Login = () => {
                     <Button variant="outline-info" type="submit">
                         Login
                     </Button>
+                    {
+                        errormsg !== '' && <p>{errormsg}</p>
+                    }
                     <p className='my-3 p-2'><small>New here? <Link className='text-decoration-none' to="/signup"> create an account</Link> </small></p>
                     <Button onClick={handleTosignwithGoogle} variant="info" className="w-100 ">
                         Sign Up with Google
