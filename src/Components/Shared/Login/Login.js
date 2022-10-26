@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { motion } from 'framer-motion';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../UserContext/UserContext';
 const Login = () => {
     const authInfo = useContext(AuthContext);
-    const { SignInGoogle, SignInGithub } = authInfo;
+    const [errormsg, setErrorMsg] = useState('');
+    const { SignInGoogle, SignInGithub, setLoading, logIn } = authInfo;
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const handleToLogin = (event) => {
+        const form = event.target;
+        event.preventDefault();
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        logIn(email, password)
+            .then(result => {
+                setErrorMsg("succssfully logged In");
+                navigate(from, { replace: true });
+            }).catch(error => { setErrorMsg(error.message); })
+
+
+    }
 
     const handleTosignwithGoogle = () => {
         SignInGoogle()
-            .then(result => console.log(result))
+            .then(result => {
+                setErrorMsg("succssfully logged In");
+                navigate(from, { replace: true });
+                setLoading(false);
+            }
+            )
             .catch(error => console.log(error))
     }
     const handleTosignwithGithub = () => {
         SignInGithub()
-            .then(result => console.log(result))
+            .then(result => {
+                setErrorMsg("succssfully logged In");
+                navigate(from, { replace: true });
+                setLoading(false);
+            })
             .catch(error => console.log(error))
     }
 

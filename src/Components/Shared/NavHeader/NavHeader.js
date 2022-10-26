@@ -1,11 +1,19 @@
 import React from 'react';
+import { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../UserContext/UserContext';
 import ToggleSwitch from './ToggleSwitch';
+import { FaUserAlt } from 'react-icons/fa';
+
 const NavHeader = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -20,10 +28,21 @@ const NavHeader = () => {
 
                     </Nav>
                     <Nav>
-                        <NavLink to='/login' className="nav-link">Login</NavLink>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
+
+
+                        {
+                            (user && user.uid) ? <>
+                                <Image className='my-auto mx-3' roundedCircle style={{ width: "30px", height: "30px" }} src={user.photoURL === null ? <FaUserAlt /> : user.photoURL} alt={user?.displayName} title={user?.displayName} />
+                                <button className="nav-link btn btn-outline-danger mx-4">Sign Out</button>
+
+                            </>
+                                :
+                                <>
+                                    <NavLink to='/login' className="nav-link">Login</NavLink>
+                                    <NavLink to='/signup' className="nav-link">Sign Up</NavLink>
+                                </>
+                        }
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>

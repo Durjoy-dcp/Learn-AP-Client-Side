@@ -98,7 +98,7 @@ const CourseDetails = () => {
 
             </Row>
 
-            <Container className='mb-5 mt-2'>
+            <Container className='pb-3 mt-2'>
 
                 <SwiperTab></SwiperTab>
             </Container>
