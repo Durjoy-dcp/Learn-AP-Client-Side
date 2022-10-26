@@ -8,10 +8,15 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../UserContext/UserContext';
 const Login = () => {
     const authInfo = useContext(AuthContext);
-    const { SignInGoogle } = authInfo;
+    const { SignInGoogle, SignInGithub } = authInfo;
 
     const handleTosignwithGoogle = () => {
         SignInGoogle()
+            .then(result => console.log(result))
+            .catch(error => console.log(error))
+    }
+    const handleTosignwithGithub = () => {
+        SignInGithub()
             .then(result => console.log(result))
             .catch(error => console.log(error))
     }
@@ -49,7 +54,7 @@ const Login = () => {
                     <Button onClick={handleTosignwithGoogle} variant="info" className="w-100 ">
                         Sign Up with Google
                     </Button>
-                    <Button variant="warning" className="w-100 my-2">
+                    <Button variant="warning" onClick={handleTosignwithGithub} className="w-100 my-2">
                         Sign Up with Github
                     </Button>
                 </Form>
