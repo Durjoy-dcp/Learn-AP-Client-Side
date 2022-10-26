@@ -8,5 +8,5 @@ swiper
 node express 
 cors
 react-to-pdf
-
+toastify
 */
