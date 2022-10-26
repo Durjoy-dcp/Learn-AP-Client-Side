@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useEffect } from 'react';
 import { motion } from "framer-motion";
 import { Col, Container, Row } from 'react-bootstrap';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
-import { FaStar, FaRegClock, FaMoneyBillAlt, FaArrowCircleLeft } from 'react-icons/fa';
+import { FaStar, FaRegClock, FaMoneyBillAlt, FaArrowCircleLeft, FaPrint } from 'react-icons/fa';
 
 import { Link, useLoaderData } from 'react-router-dom';
 import AllCatagory from '../Shared/AllCatagory/AllCatagory';
 import SwiperTab from '../Shared/Swiper/SwiperTab';
+import { useReactToPrint } from 'react-to-print';
 const CourseDetails = () => {
     const [toogle, setToogle] = useState(false);
     const course = useLoaderData();
     console.log(course);
+
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
     return (
-        <div>
+        <div >
             <Row>
                 <div className='d-md-none  '>
                     {
@@ -48,14 +55,18 @@ const CourseDetails = () => {
 
                     </div>
                     <div className='container d-flex m-3  coursesContainer'>
-                        <div className='   p-4 container rounded '>
+                        <div className='   p-4 container rounded ' ref={componentRef}>
 
                             <div className='d-lg-flex'>
                                 <div>
                                     <img src={course.img} alt="" style={{ width: "420px " }} className="rounded" />
                                 </div>
                                 <div className='p-3'>
-                                    <h1>{course.title}</h1>
+                                    <div className='d-lg-flex '>
+                                        <h1>{course.title}</h1>
+
+                                        <div><button onClick={handlePrint} className='btn btn-outline-info m-2'><FaPrint /></button></div>
+                                    </div>
                                     <h4 className='text-end gray-text'>{course.name}</h4>
                                     <p>{course.description}</p>
 
@@ -87,7 +98,7 @@ const CourseDetails = () => {
 
             </Row>
 
-            <Container>
+            <Container className='mb-5 mt-2'>
 
                 <SwiperTab></SwiperTab>
             </Container>

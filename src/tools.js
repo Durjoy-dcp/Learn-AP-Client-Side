@@ -7,5 +7,6 @@ Framer motion
 swiper 
 node express 
 cors
+react-to-pdf
 
 */
