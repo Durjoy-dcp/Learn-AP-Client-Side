@@ -76,8 +76,9 @@ const CourseDetails = () => {
                                         <p className='gray-text  ' ><FaMoneyBillAlt className='text-success me-2 ' />${course.price}</p>
 
                                     </div>
-                                    <div className='d-flex'>
+                                    <div className=' '>
                                         <Link className='' to={`/catagorycourses/${course.catagory}`} ><button className='rounded btn btn-outline-info m-3'><FaArrowCircleLeft /></button></Link>
+                                        <Link to={`/checkout/${course.id}`}><button className='btn btn-outline-info m-3 mx-auto'>Get premium access</button></Link>
                                     </div>
                                 </div>
 

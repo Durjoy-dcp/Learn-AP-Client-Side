@@ -20,6 +20,12 @@ const Registration = () => {
         const password = form.password.value;
         const url = form.url.value;
         const name = form.name.value;
+
+        if (name.split(' ').length < 2) {
+            setErrorMsg('You should provide at least words: First Name & Last Name ')
+            return;
+        }
+
         console.log(email, password, url, name);
 
         signUp(email, password)
@@ -97,7 +103,9 @@ const Registration = () => {
 
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-
+                        {
+                            errormsg !== '' && <p className='text-warning'>{errormsg}</p>
+                        }
                     </Form.Group>
                     <Button variant="outline-info" type="submit">
                         Sign Up

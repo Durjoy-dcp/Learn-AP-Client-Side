@@ -11,6 +11,8 @@ import CatagoryCourse from './Components/CatagoryCourse/CatagoryCourse';
 import CourseDetails from './Components/CourseDetails/CourseDetails';
 import Login from './Components/Shared/Login/Login';
 import Registration from './Components/Registration/Registration';
+import CheckOut from './Components/CheckOut/CheckOut';
+import Private from './Private/Private';
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +31,13 @@ function App() {
         {
           path: '/signup',
           element: <Registration></Registration>
+        },
+        {
+          path: '/checkout/:id',
+          element: <Private><CheckOut></CheckOut></Private>,
+          loader: async ({ params }) => {
+            return fetch(`http://localhost:5000/course/${params.id}`);
+          }
         },
         {
           path: '/blog',
