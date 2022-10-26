@@ -5,14 +5,27 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../UserContext/UserContext';
 import ToggleSwitch from './ToggleSwitch';
 import { FaUserAlt } from 'react-icons/fa';
 
 const NavHeader = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user);
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    const handletoLogOut = () => {
+        logOut()
+            .then(result => {
+
+                console.log("Logged Out")
+                navigate(from, { replace: true });
+            })
+            .catch(error => console.log(error))
+    }
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -33,7 +46,7 @@ const NavHeader = () => {
                         {
                             (user && user.uid) ? <>
                                 <Image className='my-auto mx-3' roundedCircle style={{ width: "30px", height: "30px" }} src={user.photoURL === null ? <FaUserAlt /> : user.photoURL} alt={user?.displayName} title={user?.displayName} />
-                                <button className="nav-link btn btn-outline-danger mx-4">Sign Out</button>
+                                <button onClick={handletoLogOut} className="nav-link btn btn-outline-danger mx-4">Sign Out</button>
 
                             </>
                                 :
