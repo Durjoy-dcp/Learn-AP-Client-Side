@@ -7,7 +7,7 @@ import CatagoryName from '../CatagoryName/CatagoryName';
 const AllCatagory = () => {
     const [allCatagory, setAllCatagory] = useState([]);
     useEffect(() => {
-        fetch('https://learnap-server-durjoy-dcp.vercel.app/catagory')
+        fetch('http://localhost:5000/catagory')
             .then(res => res.json())
             .then(data => setAllCatagory(data));
     }, []);
