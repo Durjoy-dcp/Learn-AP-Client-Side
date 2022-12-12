@@ -17,6 +17,8 @@ This SPA is created based on React .
 - Github 
 - Firebase
 - Express - Node.js (for the server side) 
+- Vercel
+- MongoDB
 
 
 ## External Elements ,Libraries  Used 
