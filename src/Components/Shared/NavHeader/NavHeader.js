@@ -46,9 +46,10 @@ const NavHeader = () => {
                         {
                             (user && user.uid) ? <>
                                 {
-                                    (user?.photoURL) ? <Image className='my-auto mx-3' roundedCircle style={{ width: "30px", height: "30px" }} src={user?.photoURL} alt={user?.displayName} title={user?.displayName} /> :
+                                    (user?.photoURL) ? <Image className='my-auto mx-3 ' roundedCircle style={{ width: "30px", height: "30px" }} src={user?.photoURL} alt={user?.displayName} title={user?.displayName} /> :
                                         <FaUserAlt className='my-auto mx-3' />
                                 }
+                                <FaUserAlt className='my-auto mx-3 text-danger' />
 
                                 <button onClick={handletoLogOut} className="nav-link btn btn-outline-danger mx-4">Sign Out</button>
 
