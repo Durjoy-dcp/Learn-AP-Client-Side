@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 const Course = ({ course }) => {
-    const { catagory, duration, id
+    const { catagory, duration, _id
         , img, name, price, rating, title } = course
     return (
 
@@ -40,7 +40,7 @@ const Course = ({ course }) => {
                     </div>
                 </div>
                 <div className=' text-lg-start text-center'>
-                    <Link to={`/course/${id}`}><button className='btn btn-outline-primary'>Go Details</button></Link>
+                    <Link to={`/course/${_id}`}><button className='btn btn-outline-primary'>Go Details</button></Link>
 
                 </div>
             </div>

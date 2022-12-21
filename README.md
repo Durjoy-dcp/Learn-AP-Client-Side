@@ -17,6 +17,8 @@ This SPA is created based on React .
 - Github 
 - Firebase
 - Express - Node.js (for the server side) 
+- Vercel
+- MongoDB
 
 
 ## External Elements ,Libraries  Used 
@@ -44,5 +46,7 @@ This SPA is created based on React .
 - Sidebar have cool animation and trigger button in for the small devices.
 - Get fun with some interactive animations on most of the pages .
 - Hi YOu are in 404 ! I am kidding .It have  cool 404 page also.
+## server 
+https://github.com/Durjoy-dcp/Learn-AP-server
 ## How to use
 Live website : https://learnap-279b4.web.app/

@@ -11,7 +11,7 @@ const AllCourse = () => {
     const [courses, setCourses] = useState([]);
 
     useEffect(() => {
-        fetch('https://learnap-server-durjoy-dcp.vercel.app/allcourses')
+        fetch('http://localhost:5000/allcourses')
             .then(res => res.json())
             .then(data => setCourses(data))
 
