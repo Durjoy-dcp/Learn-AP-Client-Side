@@ -14,8 +14,17 @@ import Registration from './Components/Registration/Registration';
 import CheckOut from './Components/CheckOut/CheckOut';
 import Private from './Private/Private';
 import Error from './Components/Error/Error';
+import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from './UserContext/UserContext';
 
 function App() {
+  const [useSpinner, setUseSpinner] = useState(false);
+  const { loading, setLoading } = useContext(AuthContext)
+
+  const handleTosetLoading = () => {
+    setLoading(true);
+  }
   const router = createBrowserRouter([
     {
       path: '/',
@@ -57,6 +66,7 @@ function App() {
           path: '/catagorycourses/:id',
           element: <CatagoryCourse ></CatagoryCourse>,
           loader: async ({ params }) => {
+
             return fetch(`https://learnap-server-durjoy-dcp.vercel.app/courses/${params.id}`);
           }
         },

@@ -6,11 +6,20 @@ import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import AllCatagory from '../Shared/AllCatagory/AllCatagory';
 import { useLoaderData } from 'react-router-dom';
 import Course from '../Shared/Course/Course';
+import { useContext } from 'react';
+import { AuthContext } from '../../UserContext/UserContext';
 const CatagoryCourse = () => {
     const [toogle, setToogle] = useState(false);
+    const { setLoading, loading } = useContext(AuthContext);
     const courses = useLoaderData();
     console.log(courses);
 
+    // if (loading) return <p>Wait</p>;
+
+    // console.log(courses);
+    // if (courses) {
+    //     setLoading(false);
+    // }
     return (
         <div>
 

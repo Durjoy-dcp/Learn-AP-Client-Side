@@ -6,17 +6,29 @@ import './AllCourse.css';
 import { useEffect } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import Course from '../Shared/Course/Course';
+import { useContext } from 'react';
+import { AuthContext } from '../../UserContext/UserContext';
 const AllCourse = () => {
     const [toogle, setToogle] = useState(false);
     const [courses, setCourses] = useState([]);
+    const { loading, setLoading } = useContext(AuthContext)
 
     useEffect(() => {
+        setLoading(true);
         fetch('https://learnap-server-durjoy-dcp.vercel.app/allcourses')
             .then(res => res.json())
-            .then(data => setCourses(data))
+            .then(data => { setCourses(data); setLoading(false) })
 
     }, [])
     console.log(courses);
+    if (loading) {
+        return <div className=' my-5 text-center '>
+
+            <div class="spinner-border " role="status">
+                <span class="visually-hidden ">Loading...</span>
+            </div>
+        </div>
+    }
     return (
         <div>
 
