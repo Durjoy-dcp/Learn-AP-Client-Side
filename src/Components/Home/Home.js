@@ -9,6 +9,9 @@ import { EffectCoverflow, Pagination, EffectCards } from "swiper";
 import SwiperTab from '../Shared/Swiper/SwiperTab';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import CreatorDetails from './CreateorDetails/CreatorDetails';
+import DifferentDetails from './DIfferentDetails/DifferentDetails';
+import GetStartedWithUs from './GetStartedWithUs/GetStartedWithUs';
 
 const Home = () => {
     return (
@@ -47,6 +50,23 @@ const Home = () => {
                 </motion.div>
 
             </div>
+            <Container>
+                <CreatorDetails></CreatorDetails>
+                <div className='text-center my-5 px-4 py-2'>
+
+                    <h1>What Make Us Different ?
+                    </h1>
+                </div>
+                <DifferentDetails></DifferentDetails>
+                <div className='my-5 p-2  '>
+
+                    <h1 className='' > Start today for getting Online Certification
+                    </h1>
+                    <p className='gray-text mb-5'> You can be your own guiding star with our help!
+                    </p>
+                </div>
+                <GetStartedWithUs></GetStartedWithUs>
+            </Container>
 
             <div>
                 <div className='text-center my-5 px-4 py-2'>
@@ -57,13 +77,15 @@ const Home = () => {
                 </div>
                 <Container>
 
+
+
                     <SwiperTab></SwiperTab>
                 </Container>
 
 
-            </div>
+            </div >
 
-        </div>
+        </div >
     );
 };
 

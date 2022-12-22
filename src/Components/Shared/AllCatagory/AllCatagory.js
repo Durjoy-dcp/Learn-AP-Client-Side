@@ -14,7 +14,7 @@ const AllCatagory = () => {
 
     return (
         <div className=' p-1 rounded '>
-            <h4 className='px-5 py-3 gray-text m-1' > Catagory</h4>
+            <h4 className='px-5 py-3 gray-text m-1' > Category</h4>
             <hr />
             <ul>
 
