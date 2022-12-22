@@ -20,11 +20,9 @@ import { AuthContext } from './UserContext/UserContext';
 
 function App() {
   const [useSpinner, setUseSpinner] = useState(false);
-  const { loading, setLoading } = useContext(AuthContext)
 
-  const handleTosetLoading = () => {
-    setLoading(true);
-  }
+
+
   const router = createBrowserRouter([
     {
       path: '/',

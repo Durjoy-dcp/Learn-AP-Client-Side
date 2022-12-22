@@ -9,6 +9,14 @@ const CheckOut = () => {
     const course = useLoaderData();
     const { user } = useContext(AuthContext);
     const notify = () => toast("Congratualtion!");
+    if (!user) {
+        return <div className=' my-5 text-center '>
+
+            <div className="spinner-border " role="status">
+                <span className="visually-hidden ">Loading...</span>
+            </div>
+        </div>
+    }
 
     return (
         <div>

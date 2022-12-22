@@ -3,22 +3,28 @@ import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../UserContext/UserContext';
 
+
+
+
 const Private = ({ children }) => {
-
-
-
-
-    const { user, loading } = useContext(AuthContext);
-
-    const location = useLocation();
-    if (user) {
-        return children;
-    }
+    const { loading, user } = useContext(AuthContext);
+    let location = useLocation();
     if (loading) {
-        return <progress className="progress w-56"></progress>
+
+        return <div className='w-100 d-flex '>
+
+            <div className="spinner-border mx-auto my-5" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+    }
+    if (user && user.uid) {
+        return children
     }
 
-    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
+
+    return <Navigate to="/login" state={{ from: location }} replace />;
 };
 
 export default Private;

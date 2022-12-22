@@ -3,20 +3,18 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { motion } from 'framer-motion';
 import Form from 'react-bootstrap/Form';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../UserContext/UserContext';
 import { toast } from 'react-toastify';
 import { FaGoogle, FaGithub } from 'react-icons/fa'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
     const authInfo = useContext(AuthContext);
     const [errormsg, setErrorMsg] = useState('');
     const { SignInGoogle, SignInGithub, setLoading, logIn } = authInfo;
     let navigate = useNavigate();
     let location = useLocation();
-    let from = location.state?.from?.pathname || '/';
-    console.log(from)
+    let from = location.state?.from?.pathname || "/";
     const handleToLogin = (event) => {
         const form = event.target;
         event.preventDefault();
@@ -39,8 +37,8 @@ const Login = () => {
             .then(result => {
                 setErrorMsg("succssfully logged In");
                 toast("succssfully logged In");
-                setLoading(false);
                 navigate(from, { replace: true });
+                setLoading(false);
             }
             )
             .catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
@@ -51,8 +49,8 @@ const Login = () => {
                 setErrorMsg("succssfully logged In");
                 toast("succssfully logged In");
 
-                setLoading(false);
                 navigate(from, { replace: true });
+                setLoading(false);
             })
             .catch(error => { setErrorMsg(error.message); toast.error("Failed to Sign In") })
     }
