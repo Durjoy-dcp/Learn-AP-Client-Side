@@ -58,13 +58,18 @@ const Home = () => {
                     </h1>
                 </div>
                 <DifferentDetails></DifferentDetails>
-                <div className='my-5 p-2  '>
+
+            </Container>
+            <div className='my-5 p-2  certificate text-center w-full d-flex align-items-center justify-content-center rounded'>
+                <div>
 
                     <h1 className='' > Start today for getting Online Certification
                     </h1>
                     <p className='gray-text mb-5'> You can be your own guiding star with our help!
                     </p>
                 </div>
+            </div>
+            <Container>
                 <GetStartedWithUs></GetStartedWithUs>
             </Container>
 
