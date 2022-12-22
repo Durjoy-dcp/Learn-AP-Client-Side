@@ -78,7 +78,7 @@ const CourseDetails = () => {
                                     </div>
                                     <div className=' '>
                                         <Link className='' to={`/catagorycourses/${course.catagory}`} ><button className='rounded btn btn-outline-info m-3'><FaArrowCircleLeft /></button></Link>
-                                        <Link to={`/checkout/${course._id}`}><button className='btn btn-outline-info m-3 mx-auto'>Get premium access</button></Link>
+                                        <Link to={`/checkout/${course.id}`}><button className='btn btn-outline-info m-3 mx-auto'>Get premium access</button></Link>
                                     </div>
                                 </div>
 

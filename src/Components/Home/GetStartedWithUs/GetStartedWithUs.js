@@ -12,7 +12,7 @@ const GetStartedWithUs = () => {
                     <div>
 
 
-                        <p className='fst-normal text-primary my-3'>GET STARTED WITH US
+                        <p className='fst-normal text-info my-3'>GET STARTED WITH US
                         </p>
                         <h2 className='gray-text my-3 '>Enjoy With
                             Favourite Courses</h2>

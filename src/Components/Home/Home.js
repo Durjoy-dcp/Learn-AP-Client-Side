@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import CreatorDetails from './CreateorDetails/CreatorDetails';
 import DifferentDetails from './DIfferentDetails/DifferentDetails';
 import GetStartedWithUs from './GetStartedWithUs/GetStartedWithUs';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     return (
@@ -85,8 +86,9 @@ const Home = () => {
 
 
                     <SwiperTab></SwiperTab>
-                </Container>
 
+                </Container>
+                <Footer></Footer>
 
             </div >
 
