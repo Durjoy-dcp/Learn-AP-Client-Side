@@ -5,7 +5,7 @@ const CreatorDetails = () => {
     return (
         <div className='mx-auto d-flex flex-wrap  align-items-center  my-5 justify-content-around p-4'>
             <div className=' my-3 '>
-                <h3 className='text-info fw-bold'>25.000+</h3>
+                <h3 className='text-info fw-bold'>250+</h3>
                 <p>Course Creator</p>
             </div>
             <div className=' my-3 '>
